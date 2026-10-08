@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>以展兴遗 · 香火龙数字传承馆</title>
+<link rel="icon" href="data:,">
+<!-- 竖屏 10 屏交互 H5：所有翻页由 JS 接管（见 js/app.js Deck 模块），禁用 scroll-snap 与整页 transform -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- ============ P1 封面 · 夜火（卷一） ============ -->
+  <section class="page" id="p1" data-page="1">
+    <div class="bg" data-img="assets/images/p1-cover.jpg"></div>
+    <div class="bg-mask mask-cover"></div>
+    <div class="p1-mist" aria-hidden="true"></div>
+    <canvas class="fx-canvas" id="fxP1"></canvas>
+    <div class="p1-dust" aria-hidden="true">
+      <i style="--x:8%;--d:11s;--del:0s;--s:1"></i>
+      <i style="--x:21%;--d:14s;--del:2.1s;--s:.7"></i>
+      <i style="--x:34%;--d:12.5s;--del:5.4s;--s:1.15"></i>
+      <i style="--x:47%;--d:16s;--del:1.2s;--s:.85"></i>
+      <i style="--x:59%;--d:13s;--del:7.6s;--s:1.3"></i>
+      <i style="--x:71%;--d:15s;--del:3.3s;--s:.9"></i>
+      <i style="--x:83%;--d:12s;--del:9.1s;--s:1.1"></i>
+      <i style="--x:93%;--d:17s;--del:6.2s;--s:.75"></i>
+    </div>
+
+    <div class="scrolltag">卷一 · 夜火 · 国家级非遗</div>
+
+    <button class="audio-toggle" id="audioToggle" aria-label="音乐开关">
+      <svg class="ic ic-on" viewBox="0 0 24 24" width="18" height="18">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+        <path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <svg class="ic ic-off" viewBox="0 0 24 24" width="18" height="18">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+        <path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="p1-main">
+      <h1 class="v-title anim-rise">香火龙</h1>
+      <p class="p1-sub anim-rise d4">香火为魂 · 舞动千年</p>
+      <div class="p1-seal" aria-hidden="true"><span>以</span><span>展</span><span>兴</span><span>遗</span></div>
+      <div class="p1-quote">
+        <p class="anim-fade d7">万支龙香，一夜燃尽。</p>
+        <p class="anim-fade d9">龙自火中生，亦向火中归。</p>
+      </div>
+    </div>
+
+    <p class="p1-verse">一村一龙 · 一夜万香</p>
+    <p class="slide-hint">滑动进入<span class="slide-bar"></span></p>
+    <p class="source-tag">来源：搜狐新闻 / 公开报道</p>
+  </section>
+
+  <!-- ============ P2 身世 · 火从哪来（卷一） ============ -->
+  <section class="page" id="p2" data-page="2">
+    <div class="bg" data-img="assets/images/p2-night.jpg"></div>
+    <div class="bg-mask p2-shade"></div>
+    <div class="p2-firelight"></div>
+    <i class="p2-smoke" style="--dx:22px"></i>
+    <i class="p2-smoke" style="--del:3.5s;--dx:-16px"></i>
+    <i class="p2-smoke" style="--del:7s;--dx:10px"></i>
+    <div class="p2-vignette"></div>
+
+    <div class="scrolltag">卷一 · 身世</div>
+
+    <div class="p2-inscription">香火龙</div>
+    <div class="p2-inscription-sub">火自汝城来</div>
+
+    <div class="p2-archive">
+      <div class="v-lines">
+        <p class="v-line">香火龙，国家级非物质文化遗产。</p>
+        <p class="v-line">湖南汝城，正月十五夜。</p>
+        <p class="v-line">楠竹为骨，稻草为肤，龙香为鳞。</p>
+        <p class="v-line">公龙九米九，母龙九米，重约二十九公斤。</p>
+        <p class="v-line">十八人，一刻钟，千六百至千八百支香。</p>
+        <p class="v-line">夜色之中，只见香火，不见人。</p>
+      </div>
+    </div>
+
+    <div class="seal"><span>以</span><span>展</span><span>兴</span><span>遗</span></div>
+
+    <div class="p2-colophon">
+      <span class="t">以展兴遗 · 香火龙数字传承馆</span>
+      <span class="src">来源：中国非物质文化遗产网 / 网易新闻</span>
+    </div>
+  </section>
+
+  <!-- ============ P3 技艺 · 火怎么生（卷二） ============ -->
+  <section class="page" id="p3" data-page="3">
+    <div class="scrolltag">卷二 · 扎龙</div>
+    <p class="p3-index" id="p3Index"><span id="p3Cn">壹</span><small id="p3Idx">01 / 04</small></p>
+    <div class="pg-topline"></div>
+
+    <div class="pg-steps" id="p3Steps">
+      <div class="pg-step on" data-s="0"><i class="no"></i><span class="nm">选骨</span></div>
+      <div class="pg-step" data-s="1"><i class="no"></i><span class="nm">为肤</span></div>
+      <div class="pg-step" data-s="2"><i class="no"></i><span class="nm">排香</span></div>
+      <div class="pg-step" data-s="3"><i class="no"></i><span class="nm">点睛</span></div>
+    </div>
+
+    <div class="pg-track" id="p3Track">
+      <section class="pg-frame cur" data-i="0">
+        <div class="pg-sky"></div><div class="pg-scale"></div><div class="pg-aura"></div><div class="pg-vignette"></div><div class="pg-grain"></div>
+        <svg class="pg-incense" style="left:22.5%;top:21%" viewBox="0 0 60 190" width="60" height="190"><path d="M30 190 Q16 130 30 72 T26 0" fill="none" stroke="rgba(230,210,180,.55)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <i class="pg-smoke"></i><i class="pg-smoke s3"></i>
+        <em class="pg-name">选骨</em>
+        <p class="pg-poem-v">破篾有声<br>龙骨初成</p>
+        <div class="pg-art" data-step="0">
+          <div class="mat"><div class="img"><div class="ph" style="background-image:url(assets/images/p3-1-bamboo.jpg)"></div><div class="cool"></div><div class="warm"></div></div><div class="shine"></div></div>
+          <div class="bar"></div><div class="cap">壹 · 破篾</div><div class="halo"></div>
+          <span class="pg-seal">选骨</span>
+        </div>
+        <div class="pg-goldline l1"></div>
+        <p class="pg-poem">破篾有声 · 龙骨初成</p>
+        <p class="pg-note">竹圈为骨，一节一节撑起龙身；<br>骨架扎好，是龙的第一口气。</p>
+        <div class="pg-tags"><span class="pg-tag">楠竹破篾</span><span class="pg-tag">竹圈成节</span><span class="pg-tag">龙骨成形</span></div>
+        <p class="pg-saying"><i class="ls"></i><span class="t">篾要青，骨要正，龙才有脊梁</span><i class="rs"></i></p>
+        <p class="pg-sub">四步扎龙 · 一步步，龙就活了</p>
+        <div class="pg-hotzone" data-step="0"></div>
+      </section>
+      <section class="pg-frame" data-i="1">
+        <div class="pg-sky"></div><div class="pg-scale"></div><div class="pg-aura"></div><div class="pg-vignette"></div><div class="pg-grain"></div>
+        <svg class="pg-incense" style="left:68.7%;top:20%" viewBox="0 0 60 190" width="60" height="190"><path d="M30 190 Q16 130 30 72 T26 0" fill="none" stroke="rgba(230,210,180,.55)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <i class="pg-smoke"></i><i class="pg-smoke s2"></i><i class="pg-smoke s3"></i>
+        <em class="pg-name">为肤</em>
+        <p class="pg-poem-v">草织为肤<br>身段渐长</p>
+        <div class="pg-art" data-step="1">
+          <div class="mat"><div class="img"><div class="ph" style="background-image:url(assets/images/p3-2-skin.jpg)"></div><div class="cool"></div><div class="warm"></div></div><div class="shine"></div></div>
+          <div class="bar"></div><div class="cap">贰 · 编织</div><div class="halo"></div>
+          <span class="pg-seal">为肤</span>
+        </div>
+        <div class="pg-goldline l1"></div>
+        <p class="pg-poem">草织为肤 · 身段渐长</p>
+        <p class="pg-note">稻草浸晒，编织龙身；<br>龙身必须单数节，祖辈的规矩。</p>
+        <div class="pg-tags"><span class="pg-tag">稻草浸泡</span><span class="pg-tag">单数节</span><span class="pg-tag">草织为肤</span></div>
+        <p class="pg-saying"><i class="ls"></i><span class="t">单数节，不成双——祖辈的规矩</span><i class="rs"></i></p>
+        <p class="pg-sub">四步扎龙 · 一步步，龙就活了</p>
+        <div class="pg-hotzone" data-step="1"></div>
+      </section>
+      <section class="pg-frame" data-i="2">
+        <div class="pg-sky"></div><div class="pg-scale"></div><div class="pg-aura"></div><div class="pg-vignette"></div><div class="pg-grain"></div>
+        <svg class="pg-incense" style="left:29.2%;top:20%" viewBox="0 0 60 190" width="60" height="190"><path d="M30 190 Q16 130 30 72 T26 0" fill="none" stroke="rgba(230,210,180,.55)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <i class="pg-smoke"></i><i class="pg-smoke s2"></i><i class="pg-smoke s3"></i>
+        <em class="pg-name">排香</em>
+        <p class="pg-poem-v">香插如鳞<br>赤金披身</p>
+        <div class="pg-art" data-step="2">
+          <div class="mat"><div class="img"><div class="ph" style="background-image:url(assets/images/p3-2-incense.jpg)"></div><div class="cool"></div><div class="warm"></div></div><div class="shine"></div></div>
+          <div class="bar"></div><div class="cap">叁 · 密插</div><div class="halo"></div>
+          <span class="pg-seal">排香</span>
+        </div>
+        <div class="pg-goldline l1"></div>
+        <p class="pg-poem">香插如鳞 · 赤金披身</p>
+        <p class="pg-note">千六百支龙香，一夜插遍龙身；<br>十八人，一刻钟，如披赤金铠甲。</p>
+        <div class="pg-tags"><span class="pg-tag">特制龙香</span><span class="pg-tag">指尖之力</span><span class="pg-tag">赤金铠甲</span></div>
+        <p class="pg-saying"><i class="ls"></i><span class="t">一夜千六百支香，香香插进龙身</span><i class="rs"></i></p>
+        <p class="pg-sub">四步扎龙 · 一步步，龙就活了</p>
+        <div class="pg-hotzone" data-step="2"></div>
+      </section>
+      <section class="pg-frame" data-i="3">
+        <div class="pg-sky"></div><div class="pg-scale"></div><div class="pg-aura"></div><div class="pg-vignette"></div><div class="pg-grain"></div>
+        <svg class="pg-incense" style="left:62.5%;top:21%" viewBox="0 0 60 190" width="60" height="190"><path d="M30 190 Q16 130 30 72 T26 0" fill="none" stroke="rgba(230,210,180,.55)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <i class="pg-smoke"></i><i class="pg-smoke s2"></i><i class="pg-smoke s3"></i>
+        <em class="pg-name">点睛</em>
+        <p class="pg-poem-v">点睛一刻<br>龙即活</p>
+        <div class="pg-art" data-step="3">
+          <div class="mat"><div class="img"><div class="ph" style="background-image:url(assets/images/p3-2-eyes.jpg)"></div><div class="cool"></div><div class="warm"></div></div><div class="shine"></div></div>
+          <div class="bar"></div><div class="cap">肆 · 点睛</div><div class="halo"></div>
+          <span class="pg-seal">点睛</span>
+        </div>
+        <div class="pg-goldline l1"></div>
+        <p class="pg-poem">点睛一刻 · 龙即活</p>
+        <p class="pg-note">球墨为眼，麻丝为须；<br>分扎组装，一条龙只差一把火。</p>
+        <div class="pg-tags"><span class="pg-tag">涂黑龙眼</span><span class="pg-tag">麻丝龙须</span><span class="pg-tag">分扎组装</span></div>
+        <p class="pg-saying"><i class="ls"></i><span class="t">一点睛，龙就活；一把火，龙就飞</span><i class="rs"></i></p>
+        <p class="pg-sub">四步扎龙 · 一步步，龙就活了</p>
+        <div class="pg-hotzone" data-step="3"></div>
+      </section>
+    </div>
+
+    <div class="pg-footline"></div>
+    <div class="pg-nav">
+      <button id="p3Prev" class="prev" aria-label="上一道工序">‹</button>
+      <div class="pg-stamp">以展<br>兴遗</div>
+      <button id="p3Next" aria-label="下一道工序">›</button>
+    </div>
+    <div class="pg-prog" id="p3Prog">
+      <i class="pt on"></i><i class="pt"></i><i class="pt"></i><i class="pt"></i>
+      <div class="line" id="p3Pline"></div>
+    </div>
+
+    <!-- 绿色立意点题（极淡，不喧宾夺主；覆盖于四步之上，不拦点击） -->
+    <p class="green-note p3-green">千六百支实体香，化作数字香火 · 一支不费山林</p>
+
+    <p class="source-tag">来源：新湖南 / 团队整理</p>
+  </section>
+
+  <!-- ============ P4 危机 · 火会灭吗（卷二） ============ -->
+  <section class="page" id="p4" data-page="4">
+    <canvas class="fx-canvas" id="fxP4"></canvas>
+    <div class="p4-sky"></div><div class="p4-beam"></div><div class="p4-aura"></div><div class="p4-vignette"></div><div class="p4-grain"></div>
+    <i class="p4-smoke"></i><i class="p4-smoke s2"></i>
+
+    <div class="scrolltag">卷二 · 危机</div>
+    <p class="p4-eb">烬卷</p>
+    <div class="p4-topline"></div>
+
+    <em class="p4-name">余烬</em>
+
+    <div class="p4-art">
+      <div class="mat"><div class="img"><div class="ph" style="background-image:url(assets/images/p4-ashes.jpg)"></div><div class="moon"></div><div class="cool"></div><div class="warm"></div></div></div>
+      <div class="bar"></div><div class="cap">壹 · 余烬</div>
+      <span class="p4-seal">烬</span>
+    </div>
+
+    <div class="p4-goldline l1"></div>
+    <p class="p4-poem">扎一条龙，全村忙活二十天。</p>
+    <p class="p4-note">舞一夜，烧作灰，倒入溪流。<br>明年，还要再扎一次。</p>
+    <p class="p4-red">年轻人走了，匠人老了。</p>
+    <p class="p4-saying"><i class="ls"></i><span>火不会自己烧下去。<br>它靠每年有人，重新把它点起来。</span><i class="rs"></i></p>
+    <p class="p4-sub">余烬未冷 · 火待人来</p>
+
+    <div class="p4-footline"></div>
+    <button class="p4-cta" id="fireEntry"><i class="fc"></i><span>你愿意一起守护吗</span></button>
+    <p class="source-tag">来源：新华社资料图（去色处理）</p>
+  </section>
+
+  <!-- ============ P5 点亮 · 万火为鳞（卷三 · 核心互动） ============
+       注意：本屏已清空为占位，由新的 AI 依据《P5重做提示词.md》从零实现。
+       保留结构：.page#p5 / .scrolltag / .p5-progress / .p5-head / #dragonWrap(放 canvas) -->
+  <section class="page" id="p5" data-page="5">
+    <div class="scrolltag">卷三 · 点亮</div>
+    <div class="p5-progress" id="p5Progress">已燃香 0 / 18</div>
+    <div class="p5-hint" id="p5Hint">点击夜空，引燃龙身 · 九节香火</div>
+
+    <div class="p5-head">
+      <h2 class="h-title gold anim-rise">万火为鳞</h2>
+      <p class="p5-sub anim-fade d3">千六百支龙香，一夜插遍龙身。<br>你来做那个点火的人。</p>
+    </div>
+
+    <!-- P5 主舞台：由新 AI 在此放置 canvas / 引擎容器 -->
+    <div class="dragon-wrap" id="dragonWrap">
+      <canvas id="dragonCanvas"></canvas>
+    </div>
+    <div class="awake-text" id="awakeText"><span>万</span><span>火</span><span>为</span><span>鳞</span></div><div class="p5-seal-mid" aria-label="以展兴遗"><span>以展</span><span>兴遗</span></div>
+
+    <!-- 「又一位点火人」轻语（每次点香短暂浮现） -->
+    <div class="p5-whisper" id="p5Whisper"></div>
+
+    <!-- 万火齐燃落款（按序显影）：形制数据 / 仪式 / 绿色立意 / 作品名 -->
+    <div class="p5-credits" id="p5Credits">
+      <p>公龙九米九 · 母龙九米 · 重二十九公斤</p>
+      <p>十八人 · 一刻钟 · 千六百支香</p>
+      <p>千六百支实体香，今夜化作数字香火——一支不费山林。</p>
+
+    </div>
+
+    <p class="source-tag">团队原创 · 基于真实香火龙形制</p>
+  </section>
+
+  <!-- ============ P6 夜舞 · 火走出去（卷三） ============ -->
+  <section class="page" id="p6" data-page="6">
+    <div class="bg" data-img="assets/images/p6-dance.jpg"></div>
+    <div class="bg-mask mask-cover"></div>
+    <!-- 招式强调色层：点招式时在实景上叠一层暖光（不换图，纯本地过渡） -->
+    <div class="p6-emph" id="p6Emph" data-m="0" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <canvas class="fx-canvas" id="shadowCanvas"></canvas>
+
+    <div class="scrolltag">卷三 · 夜舞</div>
+
+    <div class="moves">
+      <button class="move-card" style="--i:0" data-move="0">
+        <span class="mc-no">00</span>
+        <span class="mc-body"><b class="mc-nm">双龙戏珠</b><i class="mc-note">双龙交缠 · 珠走龙随</i></span>
+      </button>
+      <button class="move-card" style="--i:1" data-move="1">
+        <span class="mc-no">01</span>
+        <span class="mc-body"><b class="mc-nm">跳跃龙门</b><i class="mc-note">腾身跃火 · 鲤跃化龙</i></span>
+      </button>
+      <button class="move-card" style="--i:2" data-move="2">
+        <span class="mc-no">02</span>
+        <span class="mc-body"><b class="mc-nm">双龙出海</b><i class="mc-note">双龙并腾 · 出海之势</i></span>
+      </button>
+      <button class="move-card" style="--i:3" data-move="3">
+        <span class="mc-no">03</span>
+        <span class="mc-body"><b class="mc-nm">云游四海</b><i class="mc-note">蜿蜒游街 · 送福四方</i></span>
+      </button>
+    </div>
+
+    <!-- 联动叙事区：上为招式说明条，下为仪式五句（半透明底条保证实景上可读） -->
+    <div class="p6-narr">
+      <p class="move-detail" id="moveDetail"></p>
+      <div class="ritual">
+        <p>元宵夜，龙出祠。</p>
+        <p>沿街人家放炮接龙，村民抢香讨彩。</p>
+        <p>龙至祖祠，盘身三圈。</p>
+        <p>舞毕烧龙，是为化龙。</p>
+        <p>龙灰入溪，龙归大海。</p>
+      </div>
+    </div>
+
+    <p class="source-tag">来源：HPA湖南摄影网 / 公开报道</p>
+  </section>
+
+  <!-- ============ P7 会展 · 以展兴遗 + 线上草龙定制（卷三） ============ -->
+  <section class="page" id="p7" data-page="7">
+    <!-- 背景氛围层（不动） -->
+    <div class="half-photo anim-photo">
+      <div class="bg" data-img="assets/images/p7-foshan.jpg"></div>
+      <div class="bg-mask mask-bottom"></div>
+      <p class="p7-copy">它走出了汝城。佛山秋色巡游的夜色里，<br>也有这条火龙。<br><strong>会展，是让它被更多人看见的方式。</strong></p>
+    </div>
+
+    <!-- 工作台（铸龙工坊主体） -->
+    <div class="workbench">
+      <!-- 卷三标记 + 副标 -->
+      <div class="wb-head">
+        <span class="wb-mark">卷三 · 会展</span>
+        <span class="wb-divider"></span>
+        <span class="wb-eyebrow">线上草龙 · 三步铸成</span>
+      </div>
+
+      <!-- 主标题 -->
+      <div class="wb-title-wrap">
+        <h2 class="wb-title">线上草龙定制</h2>
+        <p class="wb-subtitle">选一脊梁 · 择一寸肤 · 定一龙头 · 你来铸这条龙</p>
+      </div>
+
+      <!-- 进度条 -->
+      <div class="wb-prog" id="wbProg">
+        <span class="wb-prog-i on" data-s="0">一 · 选骨架</span>
+        <i class="wb-prog-line"></i>
+        <span class="wb-prog-i" data-s="1">二 · 择材料</span>
+        <i class="wb-prog-line"></i>
+        <span class="wb-prog-i" data-s="2">三 · 定龙头</span>
+      </div>
+
+      <!-- 步骤卡片区 -->
+      <div class="step" data-step="0">
+        <span class="step-label">壹 · 选骨架</span>
+        <div class="opts">
+          <button class="opt" data-val="楠竹骨"><span class="opt-thumb" data-img="assets/images/p7-bone-nanzhu.jpg"></span><span class="opt-txt">楠竹骨</span></button>
+          <button class="opt" data-val="竹篾骨"><span class="opt-thumb" data-img="assets/images/p7-bone-zhumie.jpg"></span><span class="opt-txt">竹篾骨</span></button>
+          <button class="opt" data-val="向日葵杆"><span class="opt-thumb" data-img="assets/images/p7-bone-xiangrikui.jpg"></span><span class="opt-txt">向日葵杆</span></button>
+        </div>
+      </div>
+      <div class="step locked" data-step="1">
+        <span class="step-label">贰 · 择材料</span>
+        <div class="opts">
+          <button class="opt" data-val="稻草肤"><span class="opt-thumb" data-img="assets/images/p7-skin-daocao.jpg"></span><span class="opt-txt">稻草肤</span></button>
+          <button class="opt" data-val="棕叶肤"><span class="opt-thumb" data-img="assets/images/p7-skin-zongye.jpg"></span><span class="opt-txt">棕叶肤</span></button>
+          <button class="opt" data-val="麻绳肤"><span class="opt-thumb" data-img="assets/images/p7-skin-masheng.jpg"></span><span class="opt-txt">麻绳肤</span></button>
+        </div>
+      </div>
+      <div class="step locked" data-step="2">
+        <span class="step-label">叁 · 定龙头</span>
+        <div class="opts">
+          <button class="opt" data-val="威猛龙首"><span class="opt-thumb" data-img="assets/images/p7-head-weimeng.jpg"></span><span class="opt-txt">威猛龙首</span></button>
+          <button class="opt" data-val="慈祥龙首"><span class="opt-thumb" data-img="assets/images/p7-head-cixiang.jpg"></span><span class="opt-txt">慈祥龙首</span></button>
+          <button class="opt" data-val="扁龙大首"><span class="opt-thumb" data-img="assets/images/p7-head-biandalong.jpg"></span><span class="opt-txt">扁龙大首</span></button>
+        </div>
+      </div>
+
+      <!-- 铸龙台：核心视觉区 -->
+      <div class="gd-result" id="gdResult">
+        <div class="gd-pv" id="gdPv">
+          <!-- 龙形区（占位时淡显幽灵龙，生成后点亮） -->
+          <div class="gd-stage" id="gdStage"></div>
+          <!-- 金光扫过 / 粒子层 -->
+          <canvas id="gdFx" aria-hidden="true"></canvas>
+          <!-- 占位文字层（初始与选型中） -->
+          <div class="gd-pv-ph" id="gdPvPh">
+            <span class="pv-head" id="pvHead">三步铸龙 · 一念成形</span>
+            <span class="pv-line" id="pvLine">已选：＿ · ＿ · ＿</span>
+            <span class="pv-tap" id="pvTap">轻触上方卡片 · 开启第一步</span>
+          </div>
+          <!-- 完成文字层（铸成后） -->
+          <div class="gd-pv-done" id="gdPvDone">
+            <span class="pv-head" id="gdHead">你的草龙 · 已铸成</span>
+            <span class="pv-line" id="gdLine"></span>
+            <span class="pv-no" id="gdNo"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 按钮区（生成常显） -->
+      <div class="wb-btns">
+        <button class="btn-gold" id="gdGenBtn">生成我的草龙</button>
+        <button class="btn-ghost breath" id="gdExperience">我要体验</button>
+      </div>
+
+      <!-- 来源 -->
+      <p class="source-tag">来源：佛山秋色巡游公开报道（佛山Plus / 南方+ / 香港商报）</p>
+    </div>
+  </section>
+
+  <!-- ============ P8 行动 · 火继续烧（卷四） ============ -->
+  <section class="page" id="p8" data-page="8">
+    <div class="bg" data-img="assets/images/p10-dawn.jpg"></div>
+    <div class="bg-mask mask-heavy"></div>
+    <div class="scrolltag">卷四 · 接棒</div>
+    <h2 class="h-title anim-rise">你能做什么</h2>
+
+    <div class="actions">
+      <button class="action-card anim-slide" style="--i:0" data-act="learn">
+        <span class="a-ic">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h7M9 11.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="a-txt">
+          <b>了解</b><i>和守火人对话，问你想知道的一切</i>
+          <em class="a-link">关联入口 · 守火人</em>
+        </span>
+        <span class="a-arrow">›</span>
+      </button>
+      <button class="action-card anim-slide" style="--i:1" data-act="make">
+        <span class="a-ic">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M14.5 4.5l5 5L8 21H3v-5L14.5 4.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 7l5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        </span>
+        <span class="a-txt">
+          <b>体验</b><i>会展工坊，亲手扎一条迷你草龙</i>
+          <em class="a-link">关联入口 · 卷三 · 会展</em>
+        </span>
+        <span class="a-arrow">›</span>
+      </button>
+      <button class="action-card anim-slide" style="--i:2" data-act="share">
+        <span class="a-ic">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="6" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="5.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="18.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.2 10.9l7.1-4.2M8.2 13.1l7.1 4.2" stroke="currentColor" stroke-width="1.5"/></svg>
+        </span>
+        <span class="a-txt">
+          <b>传播</b><i>生成你的火种承诺卡，分享出去</i>
+          <em class="a-link">关联入口 · 卷四 · 传承之约</em>
+        </span>
+        <span class="a-arrow">›</span>
+      </button>
+      <button class="action-card anim-slide" style="--i:3" data-act="keep">
+        <span class="a-ic">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 8c1.8 1.2 2.6 2.6 2.6 4.2 0 1.7-1 3-2.6 3.8-1.6-.8-2.6-2.1-2.6-3.8C9.4 10.6 10.2 9.2 12 8z" fill="currentColor" opacity=".85"/></svg>
+        </span>
+        <span class="a-txt">
+          <b>传承</b><i>关注汝城香火龙，明年元宵，去现场</i>
+          <em class="a-link">关联入口 · 卷三 · 点亮</em>
+        </span>
+        <span class="a-arrow">›</span>
+      </button>
+    </div>
+
+    <div class="p8-note">
+      <p>四件事，都是为了让火继续烧下去。</p>
+      <p class="green-note p8-green">少费一棵竹，多留一片林</p>
+    </div>
+    <p class="source-tag">图标：团队原创</p>
+  </section>
+
+  <!-- ============ P9 数据 · 火种档案（卷四） ============ -->
+  <section class="page" id="p9" data-page="9">
+    <div class="bg" data-img="assets/images/p2-night.jpg"></div>
+    <div class="bg-mask mask-heavy"></div>
+    <div class="scrolltag">卷四 · 档案</div>
+    <div class="p9-head anim-rise">
+      <div class="p9-head-l">
+        <h2 class="h-title">关于这条龙，六个数字</h2>
+        <span class="p9-sub">火种档案 · 卷四</span>
+      </div>
+      <span class="p9-vseal" aria-hidden="true">非遗</span>
+    </div>
+
+    <div class="p9-dust" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <!-- 主数据：1,600—1,800 支龙香（视觉核心） -->
+    <div class="p9-num" data-cat="香火">
+      <div class="p9-num-head">
+        <div class="p9-num-seal" aria-label="主数据：龙香">龙<br>香</div>
+        <span class="p9-num-line" aria-hidden="true"></span>
+      </div>
+      <p class="p9-num-val">
+        <span class="roll" data-val="1600" data-range="1800">0</span><em class="p9-num-unit">支</em>
+      </p>
+      <p class="p9-num-desc">每条龙所插龙香 — 一身鳞甲皆点亮</p>
+      <p class="d-src">来源：中国非遗网</p>
+    </div>
+
+    <!-- 辅数据行 1：身长 / 重量 -->
+    <div class="p9-row p9-row-2">
+      <div class="data-card" data-cat="身长" style="--i:0">
+        <div class="dc-seal" aria-label="身长">长</div>
+        <p class="num"><span class="roll" data-val="9.9" data-dec="1">0</span><em>米</em></p>
+        <p class="desc">公龙体长（母龙 9 米，寓意地久天长）</p>
+        <p class="d-src">中国非遗网</p>
+      </div>
+      <div class="data-card" data-cat="重量" style="--i:1">
+        <div class="dc-seal" aria-label="重量">重</div>
+        <p class="num"><span class="roll" data-val="29">0</span><em>公斤</em></p>
+        <p class="desc">每条龙重量</p>
+        <p class="d-src">中国非遗网</p>
+      </div>
+    </div>
+
+    <!-- 辅数据行 2：人力 / 历史 / 地位 -->
+    <div class="p9-row p9-row-3">
+      <div class="data-card" data-cat="人力" style="--i:0">
+        <div class="dc-seal" aria-label="人力">力</div>
+        <p class="num"><span class="roll" data-val="18">0</span><em>人</em></p>
+        <p class="desc">举龙舞者</p>
+        <p class="d-src">中国非遗网</p>
+      </div>
+      <div class="data-card" data-cat="年轮" style="--i:1">
+        <div class="dc-seal" aria-label="年轮">史</div>
+        <p class="num"><span class="roll" data-val="300" data-suffix="+">0</span><em>年</em></p>
+        <p class="desc">香火龙历史</p>
+        <p class="d-src">公开报道</p>
+      </div>
+      <div class="data-card" data-cat="地位" style="--i:2">
+        <div class="dc-seal" aria-label="地位">位</div>
+        <p class="num"><span class="roll" data-val="2011">0</span><em>年</em></p>
+        <p class="desc">列入国家级非遗</p>
+        <p class="d-src">中国非遗网</p>
+      </div>
+    </div>
+
+    <p class="p9-note">以上数据来源：中国非物质文化遗产网 / 新华社 / 公开报道</p>
+  </section>
+
+  <!-- ============ P10 封底 · 传承之约（卷四） ============ -->
+  <section class="page" id="p10" data-page="10">
+    <div class="bg" data-img="assets/images/p10-dawn.jpg"></div>
+    <div class="bg-mask mask-heavy"></div>
+    <canvas class="fx-canvas" id="fxP10"></canvas>
+    <div class="p10-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="scrolltag">卷四 · 传承之约</div>
+
+    <div class="p10-head">
+      <span class="p10-rule" aria-hidden="true"></span>
+      <p class="p10-copy">龙归天，火不灭。<br>明年元宵，汝城再见。</p>
+      <span class="p10-rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="p10-bottom">
+      <div class="promise-card" id="promiseCard">
+        <span class="pc-corner pc-tl" aria-hidden="true"></span>
+        <span class="pc-corner pc-tr" aria-hidden="true"></span>
+        <span class="pc-corner pc-bl" aria-hidden="true"></span>
+        <span class="pc-corner pc-br" aria-hidden="true"></span>
+        <div class="pc-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="pc-top">
+          <div class="pc-seal" aria-hidden="true"><span>火</span><span>种</span></div>
+          <div class="pc-head-row">
+            <span class="pc-rule" aria-hidden="true"></span>
+            <p class="pc-head">火种承诺</p>
+            <span class="pc-rule" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="pc-sentence">
+          <span class="pc-say">我，</span>
+          <span class="pc-name-slot"><input id="pName" type="text" maxlength="8" placeholder="写下你的名字" autocomplete="off" aria-label="你的名字"></span>
+          <span class="pc-say">愿接香火一棒。</span>
+        </div>
+        <p class="pc-hint">写下名字，便接香火一棒</p>
+
+        <p class="pc-no" id="pcNo">火种 No.____</p>
+        <p class="pc-foot">以展兴遗 · 香火龙数字传承馆</p>
+      </div>
+
+      <div class="p10-btns">
+        <button class="btn-gold" id="pcSaveBtn" disabled>保存卡片</button>
+        <button class="btn-ghost" id="pcShareBtn" disabled>分享</button>
+      </div>
+
+      <p class="credits">素材来源：中国非物质文化遗产网 / 新华社 / 网易新闻 / 新湖南 / 红网 / HPA湖南摄影网 / 公开报道</p>
+    </div>
+  </section>
+
+</div><!-- /deck -->
+
+<!-- ============ 守火人悬浮入口 + 面板（deck 之外，P2–P9 显示） ============ -->
+<button class="keeper-fab" id="keeperFab" aria-label="守火人"><i class="flame"></i></button>
+<div class="ask-bubble" id="askBubble">问我</div>
+
+<aside class="keeper-panel" id="keeperPanel">
+  <header class="kp-head">
+    <i class="flame small"></i><b>守火人</b>
+    <button class="kp-close" id="keeperClose" aria-label="关闭">×</button>
+  </header>
+  <div class="kp-msgs" id="keeperMsgs"></div>
+  <div class="kp-chips" id="keeperChips">
+    <button class="chip">香火龙是什么？</button>
+    <button class="chip">在哪里舞？</button>
+    <button class="chip">龙怎么扎？</button>
+    <button class="chip">为什么要烧龙？</button>
+    <button class="chip">我能做什么？</button>
+    <button class="chip">怎么点亮？</button>
+  </div>
+  <footer class="kp-input">
+    <input type="text" id="keeperInput" placeholder="问守火人…" maxlength="40">
+    <button id="keeperSend">问</button>
+  </footer>
+</aside>
+
+<!-- ============ 通用弹窗 / 轻提示 ============ -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- ============ 横屏提示 ============ -->
+<div class="landscape-hint">请旋转手机至竖屏</div>
+
+<!-- ============ 滚动进度金线（顶部） ============ -->
+<div id="scrollProg" aria-hidden="true"></div>
+
+<!-- ============ 翻页暗幕（电影换场） ============ -->
+<div id="deckDim" aria-hidden="true"></div>
+
+<!-- ============ 全站胶片颗粒（印刷质感） ============ -->
+<div class="film-grain" aria-hidden="true"></div>
+
+<!-- ============ 全站香火微光氛围层（ambient-fire.js 绘制） ============ -->
+<canvas id="ambientFire" aria-hidden="true"></canvas>
+
+<script src="js/ambient-fire.js"></script>
+<script src="js/p7forge.js"></script>
+<script src="js/features.js"></script>
+<script src="js/p5fire.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
